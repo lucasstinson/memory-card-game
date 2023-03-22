@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: rgb(222, 222, 222);
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  gap: 20px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title-container {
+  background-color: #7dd3fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.title-img {
+  height: 50px;
+  width: auto;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.instructions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-board-container {
+  display: flex;
+  justify-content: center;
+}
+
+.score-board {
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.score {
+  color: green;
+}
+
+.high-score {
+  color: red;
+}
+
+.max-score {
+  color: blue;
+}
+
+.game-container {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(5, minmax(150px, 200px));
+}
+
+[class^="card-"] {
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+}
