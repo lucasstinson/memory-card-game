@@ -9,13 +9,11 @@ body {
   padding: 0;
   margin: 0;
   height: 100vh;
-  gap: 20px;
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .title-container {
@@ -24,11 +22,17 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding: 5px;
 }
 
 .title-img {
   height: 50px;
   width: auto;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 30px;
 }
 
 .intro-container {
@@ -40,11 +44,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
   font-size: 18px;
   border-radius: 10px;
   background-color: white;
   padding: 10px;
+  margin: 10px;
 }
 
 .instructions-container {
@@ -57,6 +62,7 @@ body {
 .score-board-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .score-board {
@@ -82,12 +88,29 @@ body {
   display: grid;
   justify-content: center;
   justify-items: center;
-  gap: 20px;
-  grid-template-columns: repeat(5, minmax(150px, 200px));
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(50px, 100px));
 }
 
-[class^="card-"] {
-  padding: 15px;
+.card {
+  padding: 10px;
   background-color: white;
   border-radius: 10px;
+}
+
+img {
+  height: 80px;
+}
+
+.footer-container {
+  margin-top: auto;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-logo {
+  height: 30px;
 }

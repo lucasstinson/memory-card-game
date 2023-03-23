@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import titleImage from "../images/title-image.png";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
           src={titleImage}
           alt="matching card game"
         ></img>
-        <h1 className="title">Memory Game</h1>
+        <div className="title">Memory Game</div>
       </div>
       <div className="intro-container">
         <div className="intro">
@@ -20,9 +20,6 @@ const Header = () => {
               Test Your Memory by selecting all 15 Characters only once.
             </div>
             <div className="instruction-2">
-              Gain a point for each unique character selected.
-            </div>
-            <div className="instruction-3">
               Clicking a non-unique character restarts the game.
             </div>
           </div>

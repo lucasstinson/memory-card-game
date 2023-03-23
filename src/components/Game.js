@@ -16,55 +16,89 @@ import tanjiro from "../images/tanjiro.png";
 import tsunade from "../images/tsunade.png";
 
 const Game = (props) => {
-  return (
-    <div className="game-container">
-      <div className="card-1">
-        <img onClick={props.addScore} src={boruto}></img>
-      </div>
-      <div className="card-2">
-        <img onClick={props.addScore} src={gara}></img>
-      </div>
-      <div className="card-3">
-        <img onClick={props.addScore} src={goku}></img>
-      </div>
-      <div className="card-4">
-        <img onClick={props.addScore} src={hinata}></img>
-      </div>
-      <div className="card-5">
-        <img onClick={props.addScore} src={itachi}></img>
-      </div>
-      <div className="card-6">
-        <img onClick={props.addScore} src={kakashi}></img>
-      </div>
-      <div className="card-7">
-        <img onClick={props.addScore} src={naruto}></img>
-      </div>
-      <div className="card-8">
-        <img onClick={props.addScore} src={obito}></img>
-      </div>
-      <div className="card-9">
-        <img onClick={props.addScore} src={sailor}></img>
-      </div>
-      <div className="card-10">
-        <img onClick={props.addScore} src={saitama}></img>
-      </div>
-      <div className="card-11">
-        <img onClick={props.addScore} src={sakura}></img>
-      </div>
-      <div className="card-12">
-        <img onClick={props.addScore} src={sarada}></img>
-      </div>
-      <div className="card-13">
-        <img onClick={props.addScore} src={sasuke}></img>
-      </div>
-      <div className="card-14">
-        <img onClick={props.addScore} src={tanjiro}></img>
-      </div>
-      <div className="card-15">
-        <img onClick={props.addScore} src={tsunade}></img>
-      </div>
-    </div>
-  );
+  const [characters, setCharacters] = useState([
+    { boruto: boruto },
+    { gara: gara },
+    { goku: goku },
+    { hinata: hinata },
+    { itachi: itachi },
+    { kakashi: kakashi },
+    { naruto: naruto },
+    { obito: obito },
+    { sailor: sailor },
+    { saitama: saitama },
+    { sakura: sakura },
+    { sarada: sarada },
+    { sasuke: sasuke },
+    { tanjiro: tanjiro },
+    { tsunade: tsunade },
+  ]);
+
+  const [selectedCharacters, setSelectedCharacters] = useState([]);
+
+  const checkselectedCharacter = (e) => {
+    let clickedCharacter = e.target.className;
+    let character = clickedCharacter;
+    let allSelectedCharacters = [];
+    if (selectedCharacters.includes(character)) {
+      alert("You clicked the same character twice. Want to try again?");
+      props.resetGame();
+      resetSelectedCharacters();
+    } else {
+      allSelectedCharacters = [...selectedCharacters, character];
+      setSelectedCharacters(allSelectedCharacters);
+      props.addScore();
+      if (props.score + 1 === 15) {
+        resetSelectedCharacters();
+      }
+    }
+  };
+
+  const resetSelectedCharacters = () => {
+    setSelectedCharacters([]);
+  };
+  const randomBoard = (characters) => {
+    let currentIndex = characters.length;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [characters[currentIndex], characters[randomIndex]] = [
+        characters[randomIndex],
+        characters[currentIndex],
+      ];
+    }
+    setCharacters(characters);
+  };
+
+  const handleClick = (e) => {
+    randomBoard(characters);
+    checkselectedCharacter(e);
+  };
+
+  let cards = [];
+
+  for (let i = 0; i < 15; i++) {
+    let randomCharacter = characters[i];
+    for (let character in randomCharacter) {
+      cards.push(
+        <img
+          className={character}
+          onClick={handleClick}
+          src={randomCharacter[character]}
+          alt="anime character"
+          key={i}
+        ></img>
+      );
+    }
+  }
+
+  const renderGameBoard = (cards) => {
+    return cards.map((card) => <div className="card">{card}</div>);
+  };
+
+  return <div className="game-container">{renderGameBoard(cards)}</div>;
 };
 
 export default Game;

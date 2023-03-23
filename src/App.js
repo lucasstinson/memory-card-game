@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
 import Game from "./components/Game";
+import Footer from "./components/Footer";
 import "./styles/App.css";
 
 const App = () => {
@@ -24,17 +25,18 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (currentScore === 15) {
+    if (currentScore >= 15) {
       alert("You Did it, want to play again?");
       resetGame();
     }
-  });
+  }, [currentScore]);
 
   return (
     <div className="App">
       <Header />
       <Scoreboard score={currentScore} highScore={bestScore} />
-      <Game addScore={addScore} />
+      <Game addScore={addScore} resetGame={resetGame} score={currentScore} />
+      <Footer />
     </div>
   );
 };
