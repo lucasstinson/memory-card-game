@@ -17,10 +17,10 @@ const Header = () => {
           <div className="welcome">Welcome to the Memory Card Game!</div>
           <div className="instructions-container">
             <div className="instruction-1">
-              Test Your Memory by selecting all 15 Characters only once.
+              Select each character only once.
             </div>
             <div className="instruction-2">
-              Clicking a non-unique character restarts the game.
+              Clicking the same character restarts the game.
             </div>
           </div>
         </div>

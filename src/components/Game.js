@@ -95,7 +95,11 @@ const Game = (props) => {
   }
 
   const renderGameBoard = (cards) => {
-    return cards.map((card) => <div className="card">{card}</div>);
+    return cards.map((card, index) => (
+      <div className="card" key={index}>
+        {card}
+      </div>
+    ));
   };
 
   return <div className="game-container">{renderGameBoard(cards)}</div>;
