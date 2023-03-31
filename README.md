@@ -13,7 +13,7 @@ A **live preview** of the project is [here](https://lucasstinson.github.io/memor
 #### **Features:**
 
 - A user has the ability to play a memory game with cards.
-- Each click on a unique card will add 1 point, with the goal of reaching 15.
+- Each click on a unique card will add 1 point, with the goal being 15 points.
 - A user's best score is tracked as the "High Score".
 - Clicking the same card twice will reset your score to 0.
 - Each click will randomize the order of the cards. **Good Luck!**
