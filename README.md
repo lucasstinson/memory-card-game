@@ -29,7 +29,7 @@ A **live preview** of the project is [here](https://lucasstinson.github.io/memor
 
 #### **Areas of Improvement:**
 
-- The win condition is reaching clicking 15 unique cards. Upon clicking the 15th unique card, the "Score" and "High Score" should update to 15, but instead both of those scores do not change until after the "OK" on the "play again" prompt is clicked. At that point, the "Score" displays 0 for the new game and the "High Score" displays 15 which is also correct.
+- The win condition is selecting 15 unique cards. Upon clicking the 15th unique card, the "Score" and "High Score" should update to 15, but instead both of those scores do not change until after the "OK" on the "play again" prompt is clicked. At that point, the "Score" displays 0 for the new game and the "High Score" displays 15.
 - The game is on the simpler side and the replay value could be increased if there was a level system in which the game starts out easy with a few cards and the difficulty slowly increases upon each win.
 
 ### Assignment
